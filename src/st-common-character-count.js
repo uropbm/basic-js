@@ -11,7 +11,21 @@ import { NotImplementedError } from '../extensions/index.js';
  * For s1 = "aabcc" and s2 = "adcaa", the output should be 3
  * Strings have 3 common characters - 2 "a"s and 1 "c".
  */
-export default function getCommonCharacterCount(/* s1, s2 */) {
+export default function getCommonCharacterCount(s1, s2) {
   throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
+  
+  // let s = s1.split('')
+  // let count = 0
+  // for (let i = 0; i < s.length; i++) {
+  //   let ss = new RegExp(s[i])
+  //   s2.replace(ss, '+')
+  // }
+  // for (let i = 0; i < s.length; i++) {
+  //   if (s2[i] == '+') {
+  //     count++
+  //   }
+  // }
+  // return count
 }
+
