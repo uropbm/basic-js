@@ -16,6 +16,7 @@ export default function getSeason(date) {
   // // remove line with error and write your code here
   if (date == null) {
     return 'Unable to determine the time of year!' }
+  else if (date == toString()) {return "Invalid date!"}
   else if (Object.prototype.toString.call(date) != "[object Date]") {
     return true }
   const season = {
