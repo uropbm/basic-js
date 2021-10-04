@@ -14,11 +14,7 @@ import { NotImplementedError } from '../extensions/index.js';
 export default function getSeason(date) {
   // throw new NotImplementedError('Not implemented');
   // // remove line with error and write your code here
-  if (date == null) {
-    return 'Unable to determine the time of year!' }
-  else if ((typeof date === 'string') || (typeof date === 'array')) {return "Invalid date!"}
-  else if (Object.prototype.toString.call(date) != "[object Date]") {
-    return true }
+  
   const season = {
     0 : 'winter',
     1 : 'winter',
@@ -33,5 +29,11 @@ export default function getSeason(date) {
     10 : 'autumn',
     11 : 'winter',
   }
-  return season[date.getMonth()]
+  try {
+    if (date == null) {
+      return 'Unable to determine the time of year!' 
+    }
+    return season[date.getMonth()]
+  }
+  catch { throw new Error('Invalid date!') }
 }

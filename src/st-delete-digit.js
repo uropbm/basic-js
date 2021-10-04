@@ -12,13 +12,20 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function deleteDigit(n) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
-  // let s = ('' + n).length
-  // let r = Math.pow(10, s - 2)
-  // let num = Math.trunc(n / 10)
-  // while (r != 1) {
+  // throw new NotImplementedError('Not implemented');
+  // // remove line with error and write your code here
+  let s = ('' + n)
 
-  // }
-  // return r
+  let num = 0, num1 = 0
+
+    console.log(s)
+
+  for (let i = 0; i < s.length; i++) {
+    num1 = +s.replace(new RegExp(s[i]), '')
+    if (num1 > num) {
+      num = num1
+    }
+  }
+
+  return num
 }
