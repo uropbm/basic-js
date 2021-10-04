@@ -21,12 +21,12 @@ export default function dateSample(sampleActivity) {
   // throw new NotImplementedError('Not implemented');
   // // remove line with error and write your code here
 
-  if ((sampleActivity <= 0) || (sampleActivity > 15))
+  if ((sampleActivity <= 0) || (sampleActivity > 15) || (!+sampleActivity) || (typeof sampleActivity === 'number'))
     return false
 
   if ((!sampleActivity) || (sampleActivity == null)  || (sampleActivity == undefined))
     return false
 
-  return Math.floor(Math.log((MODERN_ACTIVITY / sampleActivity) / 0.693) * HALF_LIFE_PERIOD)
+  return Math.ceil(Math.log(MODERN_ACTIVITY / sampleActivity) / 0.693 * HALF_LIFE_PERIOD)
 
 }
