@@ -16,13 +16,27 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function repeater(str, options) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
-  //   let s = ''
-  // for (let key in options) {
-  //   for (let i = 0; i < options[key]; i++) {
-  //     s = s + str.split('').join('+')
-  //   }
-  // }
-  // return s
+  // throw new NotImplementedError('Not implemented');
+  // // remove line with error and write your code here
+    let arr = []
+    let repeat, addition
+    let separator = '+'
+  for (let key in options) {
+    switch (key) {
+      case 'repeatTimes' :
+        repeat = options[key]
+      break
+      case 'separator' :
+        separator = options[key]
+      break
+      case 'addition' :
+        addition = options[key]
+      break
+    }
+    for (let i = 0; i < repeat; i++) {
+      arr[i] = str.split(separator)
+    }
+  }
+  
+  return arr.join(separator)
 }
